@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import './App.css';
 import Banner from './Components/Banner';
 import { Items, MenuItems } from './Components/Data';
+import DebitCard from './Components/DebitCard';
 import Header from './Components/Header';
 import ItemCard from './Components/ItemCard';
 import MenuCard from './Components/MenuCard';
@@ -84,7 +85,13 @@ function App() {
 
           </div>
         </div>
-        <div className="rightMenu"></div>
+        <div className="rightMenu">
+          <div className="debitCardContainer">
+            <div className="debitCard">
+              <DebitCard></DebitCard>
+            </div>
+          </div>
+        </div>
       </main>
       <div className="bottomMenu">
         <ul id="menu">
