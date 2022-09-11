@@ -1,6 +1,7 @@
 import { AccountBalanceRounded, Chat, Favorite, HomeRounded, Settings, SummarizeRounded } from '@mui/icons-material';
 import { useEffect } from 'react';
 import './App.css';
+import Banner from './Components/Banner';
 import Header from './Components/Header';
 import MenuContainer from './Components/MenuContainer';
 
@@ -17,12 +18,19 @@ function App() {
     <div className="App">
       <Header></Header>
       <main>
-        <div className="mainContainer"></div>
+        <div className="mainContainer">
+          <div className="banner">
+            <Banner name={"Roctim"} discount={"20"} link={"#"}></Banner>
+            <img src="https://i.ibb.co/nBxzgSs/Group-1151.png" alt=""
+              className='deliveryPic'
+            />
+          </div>
+        </div>
         <div className="rightMenu"></div>
       </main>
       <div className="bottomMenu">
         <ul id="menu">
-          <MenuContainer link={'#'} icon={<HomeRounded />}></MenuContainer>
+          <MenuContainer link={'#'} icon={<HomeRounded />} isHome></MenuContainer>
           <MenuContainer link={'#'} icon={<Chat />}></MenuContainer>
           <MenuContainer link={'#'} icon={<AccountBalanceRounded />}></MenuContainer>
           <MenuContainer link={'#'} icon={<Favorite />}></MenuContainer>
