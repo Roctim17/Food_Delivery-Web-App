@@ -2,6 +2,7 @@ import { AccountBalanceRounded, Chat, Favorite, HomeRounded, Settings, Summarize
 import { useEffect } from 'react';
 import './App.css';
 import Banner from './Components/Banner';
+import { MenuItems } from './Components/Data';
 import Header from './Components/Header';
 import MenuCard from './Components/MenuCard';
 import MenuContainer from './Components/MenuContainer';
@@ -15,6 +16,16 @@ function App() {
       this.classList.add('active')
     }
     menuLi.forEach(n => n.addEventListener('click', setMenuActive))
+
+    const menuCards = document.querySelector('.rowContainer')
+      .querySelectorAll('.rowMenuCard')
+
+    function setMenuCardActive() {
+      menuCards.forEach((n) => n.classList.remove('active'));
+      this.classList.add('active')
+    }
+    menuCards.forEach(n => n.addEventListener('click', setMenuCardActive))
+
   }, [])
   return (
     <div className="App">
@@ -33,11 +44,16 @@ function App() {
             </div>
 
             <div className="rowContainer">
-              <MenuCard imgSrc={'https://i.ibb.co/jLh19BW/thanos-pal-598887-unsplash.png'} name={'Burger'}></MenuCard>
-              <MenuCard imgSrc={'https://i.ibb.co/jLh19BW/thanos-pal-598887-unsplash.png'} name={'Burger'}></MenuCard>
-              <MenuCard imgSrc={'https://i.ibb.co/jLh19BW/thanos-pal-598887-unsplash.png'} name={'Burger'}></MenuCard>
-              <MenuCard imgSrc={'https://i.ibb.co/jLh19BW/thanos-pal-598887-unsplash.png'} name={'Burger'}></MenuCard>
-              <MenuCard imgSrc={'https://i.ibb.co/jLh19BW/thanos-pal-598887-unsplash.png'} name={'Burger'}></MenuCard>
+              {
+                MenuItems && MenuItems.map(data => (
+
+                  <div className="" key={data.id}>
+                    <MenuCard imgSrc={data.imgSrc} name={data.name}
+                      isActive={data.id === 1 ? true : false} ></MenuCard>
+                  </div>
+                ))
+              }
+
             </div>
 
 
