@@ -479,7 +479,7 @@ main {
   color: #f8901c;
 }
 
-.dishContainer {
+.dishItemContainer {
   display: flex;
   justify-content: space-around;
   align-items: center;

@@ -2,7 +2,7 @@ import { AddRounded, Favorite, StarRounded } from '@mui/icons-material';
 import React from 'react';
 import { useState } from 'react';
 
-const ItemCard = ({ imgSrc, name, ratings, price }) => {
+const ItemCard = ({ imgSrc, name, ratings, price, itemId }) => {
     const [isFavorite, setIsFavorite] = useState(false);
     const [currentValue, setCurrentValue] = useState(Math.floor(ratings))
 
@@ -10,7 +10,7 @@ const ItemCard = ({ imgSrc, name, ratings, price }) => {
         setCurrentValue(value)
     }
     return (
-        <div className='itemCard'>
+        <div className='itemCard' id={itemId}>
             <div className={`isFavorite ${isFavorite ? 'active' : ""}`}
                 onClick={() => setIsFavorite(!isFavorite)}
             >
