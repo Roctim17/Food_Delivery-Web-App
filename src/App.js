@@ -4,6 +4,7 @@ import './App.css';
 import Banner from './Components/Banner';
 import Header from './Components/Header';
 import MenuContainer from './Components/MenuContainer';
+import SubMenuContainer from './Components/SubMenuContainer';
 
 function App() {
   useEffect(() => {
@@ -24,6 +25,13 @@ function App() {
             <img src="https://i.ibb.co/nBxzgSs/Group-1151.png" alt=""
               className='deliveryPic'
             />
+          </div>
+          <div className="dishContainer">
+            <div className="menuCard">
+              <SubMenuContainer name={'Menu Category'}></SubMenuContainer>
+            </div>
+            <div className="rowContainer"></div>
+            <div className="dishItemContainer"></div>
           </div>
         </div>
         <div className="rightMenu"></div>
