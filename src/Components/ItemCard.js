@@ -3,7 +3,12 @@ import React from 'react';
 import { useState } from 'react';
 
 const ItemCard = ({ imgSrc, name, ratings, price }) => {
-    const [isFavorite, setIsFavorite] = useState(false)
+    const [isFavorite, setIsFavorite] = useState(false);
+    const [currentValue, setCurrentValue] = useState(Math.floor(ratings))
+
+    const handleClick = (value) => {
+        setCurrentValue(value)
+    }
     return (
         <div className='itemCard'>
             <div className={`isFavorite ${isFavorite ? 'active' : ""}`}
@@ -19,7 +24,9 @@ const ItemCard = ({ imgSrc, name, ratings, price }) => {
                 <div className="bottom">
                     <div className="ratings">
                         {Array.apply(null, { length: 5 }).map((e, i) => (
-                            <i key={i} className="rating">
+                            <i key={i} className={`rating ${currentValue > i ? "orange" : "gray"}`}
+                                onClick={() => handleClick(i + 1)}
+                            >
                                 <StarRounded></StarRounded>
                             </i>
                         ))}
