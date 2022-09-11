@@ -4,6 +4,7 @@ import './App.css';
 import Banner from './Components/Banner';
 import { MenuItems } from './Components/Data';
 import Header from './Components/Header';
+import ItemCard from './Components/ItemCard';
 import MenuCard from './Components/MenuCard';
 import MenuContainer from './Components/MenuContainer';
 import SubMenuContainer from './Components/SubMenuContainer';
@@ -55,10 +56,27 @@ function App() {
               }
 
             </div>
-
-
-
-            <div className="dishItemContainer"></div>
+            <div className="dishItemContainer">
+              <ItemCard imgSrc={'https://i.ibb.co/jLh19BW/thanos-pal-598887-unsplash.png'}
+                name={'Burger Bistro'}
+                ratings={5}
+                price={'7.5'}>
+              </ItemCard>
+            </div>
+            <div className="dishItemContainer">
+              <ItemCard imgSrc={'https://i.ibb.co/jLh19BW/thanos-pal-598887-unsplash.png'}
+                name={'Burger Bistro'}
+                ratings={5}
+                price={'7.5'}>
+              </ItemCard>
+            </div>
+            <div className="dishItemContainer">
+              <ItemCard imgSrc={'https://i.ibb.co/jLh19BW/thanos-pal-598887-unsplash.png'}
+                name={'Burger Bistro'}
+                ratings={5}
+                price={'7.5'}>
+              </ItemCard>
+            </div>
           </div>
         </div>
         <div className="rightMenu"></div>
