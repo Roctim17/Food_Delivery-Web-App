@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import './App.css';
 import Banner from './Components/Banner';
 import Header from './Components/Header';
+import MenuCard from './Components/MenuCard';
 import MenuContainer from './Components/MenuContainer';
 import SubMenuContainer from './Components/SubMenuContainer';
 
@@ -30,7 +31,17 @@ function App() {
             <div className="menuCard">
               <SubMenuContainer name={'Menu Category'}></SubMenuContainer>
             </div>
-            <div className="rowContainer"></div>
+
+            <div className="rowContainer">
+              <MenuCard imgSrc={'https://i.ibb.co/jLh19BW/thanos-pal-598887-unsplash.png'} name={'Burger'}></MenuCard>
+              <MenuCard imgSrc={'https://i.ibb.co/jLh19BW/thanos-pal-598887-unsplash.png'} name={'Burger'}></MenuCard>
+              <MenuCard imgSrc={'https://i.ibb.co/jLh19BW/thanos-pal-598887-unsplash.png'} name={'Burger'}></MenuCard>
+              <MenuCard imgSrc={'https://i.ibb.co/jLh19BW/thanos-pal-598887-unsplash.png'} name={'Burger'}></MenuCard>
+              <MenuCard imgSrc={'https://i.ibb.co/jLh19BW/thanos-pal-598887-unsplash.png'} name={'Burger'}></MenuCard>
+            </div>
+
+
+
             <div className="dishItemContainer"></div>
           </div>
         </div>
