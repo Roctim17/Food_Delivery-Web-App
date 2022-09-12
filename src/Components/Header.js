@@ -4,8 +4,8 @@ import React, { useEffect } from 'react';
 const Header = () => {
     useEffect(() => {
         const toggleMenu = document.querySelector(".toggleMenu");
-        toggleMenu.addEventListener('click', () => {
-            document.querySelector('.rightMenu').classList.toggle('active')
+        toggleMenu.addEventListener("click", () => {
+            document.querySelector(".rightMenu").classList.toggle("active")
         })
     }, [])
     return (

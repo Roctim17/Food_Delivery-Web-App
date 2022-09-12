@@ -9,12 +9,14 @@ import Header from './Components/Header';
 import ItemCard from './Components/ItemCard';
 import MenuCard from './Components/MenuCard';
 import MenuContainer from './Components/MenuContainer';
+import { useStateValue } from './Components/StateProvider';
 import SubMenuContainer from './Components/SubMenuContainer';
 
 function App() {
   const [isMainData, setMainData] = useState(
     Items.filter((element) => element.itemId === "buger01")
   )
+  const [{ cart }, dispatch] = useStateValue();
 
   useEffect(() => {
     const menuLi = document.querySelectorAll('#menu li')
@@ -33,7 +35,7 @@ function App() {
     }
     menuCards.forEach(n => n.addEventListener('click', setMenuCardActive))
 
-  }, [isMainData]);
+  }, [isMainData, cart]);
 
   const setData = (itemId) => {
     setMainData(Items.filter((element) => element.itemId === itemId))
@@ -92,58 +94,40 @@ function App() {
               <DebitCard></DebitCard>
             </div>
           </div>
-          <div className="cartCheckOutContainer">
-            <SubMenuContainer name={"carts Items"}></SubMenuContainer>
-            <div className="cartContainer">
-              <div className="cartItems">
-                <CartItem
-                  name={'Burger Bristo'}
-                  imgSrc={'https://i.ibb.co/nBxzgSs/Group-1151.png'}
-                  quantity={'4'}
-                  price={'7.95'}
-                ></CartItem>
-                <CartItem
-                  name={'Burger Bristo'}
-                  imgSrc={'https://i.ibb.co/nBxzgSs/Group-1151.png'}
-                  quantity={'4'}
-                  price={'7.95'}
-                ></CartItem>
-                <CartItem
-                  name={'Burger Bristo'}
-                  imgSrc={'https://i.ibb.co/nBxzgSs/Group-1151.png'}
-                  quantity={'4'}
-                  price={'7.95'}
-                ></CartItem>
-                <CartItem
-                  name={'Burger Bristo'}
-                  imgSrc={'https://i.ibb.co/nBxzgSs/Group-1151.png'}
-                  quantity={'4'}
-                  price={'7.95'}
-                ></CartItem>
-                <CartItem
-                  name={'Burger Bristo'}
-                  imgSrc={'https://i.ibb.co/nBxzgSs/Group-1151.png'}
-                  quantity={'4'}
-                  price={'7.95'}
-                ></CartItem>
-                <CartItem
-                  name={'Burger Bristo'}
-                  imgSrc={'https://i.ibb.co/nBxzgSs/Group-1151.png'}
-                  quantity={'4'}
-                  price={'7.95'}
-                ></CartItem>
+          {
+
+            !cart ? <div></div> :
+
+              <div className="cartCheckOutContainer">
+                <SubMenuContainer name={"carts Items"}></SubMenuContainer>
+                <div className="cartContainer">
+                  <div className="cartItems">
+                    {
+                      cart && cart.map(data => (
+
+                        <CartItem
+                          key={data.id}
+                          itemId={data.id}
+                          name={data.name}
+                          imgSrc={data.imgSrc}
+                          price={data.price}
+                        ></CartItem>
+                      ))
+                    }
 
 
+
+                  </div>
+                </div>
+                <div className="totalSection">
+                  <h3>Total</h3>
+                  <p>
+                    <span>$ 45.0</span>
+                  </p>
+                </div>
+                <button className="checkOut">Check Out</button>
               </div>
-            </div>
-            <div className="totalSection">
-              <h3>Total</h3>
-              <p>
-                <span>$ 45.0</span>
-              </p>
-            </div>
-            <button className="checkOut">Check Out</button>
-          </div>
+          }
         </div>
       </main>
       <div className="bottomMenu">
