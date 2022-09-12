@@ -2,6 +2,7 @@ import { AccountBalanceRounded, Chat, Favorite, HomeRounded, Settings, Summarize
 import { useEffect, useState } from 'react';
 import './App.css';
 import Banner from './Components/Banner';
+import CartItem from './Components/CartItem';
 import { Items, MenuItems } from './Components/Data';
 import DebitCard from './Components/DebitCard';
 import Header from './Components/Header';
@@ -89,6 +90,19 @@ function App() {
           <div className="debitCardContainer">
             <div className="debitCard">
               <DebitCard></DebitCard>
+            </div>
+          </div>
+          <div className="cartCheckOutContainer">
+            <div className="cartContainer">
+              <SubMenuContainer name={"carts Items"}></SubMenuContainer>
+              <div className="cartItems">
+                <CartItem
+                  name={'Burger Bristo'}
+                  imgSrc={'https://i.ibb.co/nBxzgSs/Group-1151.png'}
+                  quantity={'4'}
+                  price={'7.95'}
+                ></CartItem>
+              </div>
             </div>
           </div>
         </div>

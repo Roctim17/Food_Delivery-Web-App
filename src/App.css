@@ -710,12 +710,12 @@ main {
 .card_from {
   font-size: 12px;
   bottom: 30px;
-  right: 90px;
+  right: 50px;
 }
 
 .card_to {
   bottom: 30px;
-  right: 30px;
+  right: 5px;
   font-size: 12px;
 }
 
