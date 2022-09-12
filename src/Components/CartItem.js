@@ -12,9 +12,9 @@ const CartItem = ({ name, imgSrc, quantity, price }) => {
                 <div className="itemQuantity">
                     <span>X {quantity}</span>
                     <div className="quantity">
-                        <RemoveRounded></RemoveRounded>
+                        <RemoveRounded className='itemRemove'></RemoveRounded>
 
-                        <AddRounded></AddRounded>
+                        <AddRounded className='itemAdd'></AddRounded>
                     </div>
                 </div>
             </div>

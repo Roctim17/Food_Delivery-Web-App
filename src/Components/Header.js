@@ -1,7 +1,13 @@
 import { BarChart, SearchRounded, ShoppingCartRounded } from '@mui/icons-material';
-import React from 'react';
+import React, { useEffect } from 'react';
 
 const Header = () => {
+    useEffect(() => {
+        const toggleMenu = document.querySelector(".toggleMenu");
+        toggleMenu.addEventListener('click', () => {
+            document.querySelector('.rightMenu').classList.toggle('active')
+        })
+    }, [])
     return (
         <header>
             <img src="https://i.ibb.co/64HNVs8/logo2.png" alt="" className='logo' />

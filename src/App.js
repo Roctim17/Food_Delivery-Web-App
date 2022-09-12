@@ -93,8 +93,8 @@ function App() {
             </div>
           </div>
           <div className="cartCheckOutContainer">
+            <SubMenuContainer name={"carts Items"}></SubMenuContainer>
             <div className="cartContainer">
-              <SubMenuContainer name={"carts Items"}></SubMenuContainer>
               <div className="cartItems">
                 <CartItem
                   name={'Burger Bristo'}
@@ -102,8 +102,47 @@ function App() {
                   quantity={'4'}
                   price={'7.95'}
                 ></CartItem>
+                <CartItem
+                  name={'Burger Bristo'}
+                  imgSrc={'https://i.ibb.co/nBxzgSs/Group-1151.png'}
+                  quantity={'4'}
+                  price={'7.95'}
+                ></CartItem>
+                <CartItem
+                  name={'Burger Bristo'}
+                  imgSrc={'https://i.ibb.co/nBxzgSs/Group-1151.png'}
+                  quantity={'4'}
+                  price={'7.95'}
+                ></CartItem>
+                <CartItem
+                  name={'Burger Bristo'}
+                  imgSrc={'https://i.ibb.co/nBxzgSs/Group-1151.png'}
+                  quantity={'4'}
+                  price={'7.95'}
+                ></CartItem>
+                <CartItem
+                  name={'Burger Bristo'}
+                  imgSrc={'https://i.ibb.co/nBxzgSs/Group-1151.png'}
+                  quantity={'4'}
+                  price={'7.95'}
+                ></CartItem>
+                <CartItem
+                  name={'Burger Bristo'}
+                  imgSrc={'https://i.ibb.co/nBxzgSs/Group-1151.png'}
+                  quantity={'4'}
+                  price={'7.95'}
+                ></CartItem>
+
+
               </div>
             </div>
+            <div className="totalSection">
+              <h3>Total</h3>
+              <p>
+                <span>$ 45.0</span>
+              </p>
+            </div>
+            <button className="checkOut">Check Out</button>
           </div>
         </div>
       </main>
