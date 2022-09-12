@@ -3,11 +3,11 @@ import React, { useEffect } from 'react';
 
 const Header = () => {
     useEffect(() => {
-        const toggleMenu = document.querySelector(".toggleMenu");
-        toggleMenu.addEventListener("click", () => {
-            document.querySelector(".rightMenu").classList.toggle("active")
-        })
-    }, [])
+        const toggleIcon = document.querySelector(".toggleMenu");
+        toggleIcon.addEventListener("click", () => {
+            document.querySelector(".rightMenu").classList.toggle("active");
+        });
+    }, []);
     return (
         <header>
             <img src="https://i.ibb.co/64HNVs8/logo2.png" alt="" className='logo' />
